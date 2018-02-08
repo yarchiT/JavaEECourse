@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="adidasBoots" class="Adidas"/>
+        <bean id="zidan" class="Footballer">
+            <constructor-arg value="Forward"/>
+            <constructor-arg ref="adidasBoots"/>
+        </bean>
+        <bean id="crosby" class="HockeyPlayer">
+            <constructor-arg value="Forward"></constructor-arg>
+        </bean>
+
+        <bean id="mourinho" class="Coach">
+            <property name="sportsmen">
+                <list>
+                    <ref bean="zidan"></ref>
+                    <ref bean="crosby"></ref>
+                </list>
+            </property>
+        </bean>
+
+</beans>
